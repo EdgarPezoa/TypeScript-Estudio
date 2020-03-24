@@ -1,0 +1,16 @@
+<h1>Hola soy {{nombre}} {{apellido}}</h1>
+<h2>Alumno: {{alumno.nombre + " " + alumno.apellido + " Edad: " + alumno.edad}}</h2>
+<h2>Soy h2</h2>
+<h2>Soy h2</h2>
+<!-- <p>{{inputNuevo}}</p> -->
+<!-- <input type="text" [(ngModel)]="inputNuevo"> -->
+<label for="">
+    Correo
+    <input type="text" [(ngModel)]="correo" name="" id="">
+</label>
+<label for="">
+    Contraseña
+    <input type="password" [(ngModel)]="password" name="" id="">
+</label>
+
+<button (click)="ingresar()">Iniciar</button>
