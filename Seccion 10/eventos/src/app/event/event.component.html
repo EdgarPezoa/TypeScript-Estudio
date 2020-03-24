@@ -1,0 +1,40 @@
+<h1>Eventos</h1>
+<h2>Doble click</h2>
+
+<label for="">
+    Correo
+    <input type="text" (ngModelChange)="escribirCorreo()" [(ngModel)]="email">
+</label>
+<label for="">
+    Contraseña
+    <input type="password" (ngModelChange)="escribirPassword()" [(ngModel)]="password" name="" id="">
+</label>
+<button (dblclick)="ingresar()">Ingresar</button>
+<button (dblclick)="darAlerta()" >Dar alerta</button>
+
+<br>
+<label for="">
+    input Event
+    <input type="text" (input)="escribir($event)">
+</label>
+<label for="">
+    focus Event
+    <input type="text" (focus)="colorearFondo($event)">
+</label>
+
+<br>
+<br>
+
+<label for="">
+    Correo
+    <input type="text" (keydown)="ingresarKeyDown($event)" [(ngModel)]="email">
+</label>
+<label for="">
+    Contraseña
+    <input type="password" [(ngModel)]="password" name="" id="">
+</label>
+<button (dblclick)="ingresar()">Ingresar</button>
+
+<br>
+<br>
+<img src="https://lh6.googleusercontent.com/-mwjksp6bc3c/Uedd3ROtyZI/AAAAAAAAAJM/9jQ_qfCEshQ/s1600/NEW+GOOGLE+LOGO.jpg" (mouseleave)="restablecerSize($event)" (mouseenter)="cambiarSize($event)" alt="">
