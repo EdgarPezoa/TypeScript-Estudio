@@ -1,0 +1,59 @@
+<div class="container">
+    <form [formGroup]="formulario" action="">
+        <div class="form-group">
+            <label for="">Nombre
+                <div *ngIf="formulario.controls['nombre'].invalid && formulario.controls['nombre'].dirty">
+                    <span *ngIf="formulario.controls['nombre'].errors.required">*El nombre es requerido</span>
+                </div>
+            </label>
+            <input type="text" class="form-control" formControlName="nombre">
+        </div>
+
+        <div class="form-group">
+            <label for="">Correo 
+                <div *ngIf="formulario.controls['correo'].invalid && formulario.controls['correo'].dirty">
+                    <span *ngIf="formulario.controls['correo'].errors.required">*El correo es requerido</span>
+                    <span *ngIf="formulario.controls['correo'].errors.email">*Formato de correo invalido</span>
+                </div>
+            </label>
+            <input type="text" class="form-control" formControlName="correo">
+        </div>
+        <div class="form-group">
+            <label for="">Contraseña
+                <div *ngIf="formulario.controls['password'].invalid && formulario.controls['password'].dirty">
+                    <span *ngIf="formulario.controls['password'].errors.required">*La contraseña es requerida</span>
+                    <span *ngIf="formulario.controls['password'].errors.minlength">*La contraseña debe tener minimo 8 caracteres</span>
+                </div>
+            </label>
+            <input type="password" class="form-control" formControlName="password">
+        </div>
+        <div class="form-group">
+            <button *ngIf="!esNuevo" [disabled]="!formulario.valid" class="btn btn-primary" (click)="agregar()">Agregar</button>
+            <button *ngIf="esNuevo" [disabled]="!formulario.valid" class="btn btn-danger" (click)="editarUsuario()">editar</button>
+            
+        </div>
+    </form>
+</div>
+
+<div *ngFor="let usuario of usuarios; let position = index">
+    <h4>{{usuario.nombre}} posicion: {{position}}</h4>
+    <p>{{usuario.correo}}</p>
+    <p>{{usuario.password}}</p>
+    <button class="btn btn-primary" (click)="editar(position)">editar</button>
+    <button class="btn btn-danger" (click)="eliminar(position)">eliminar</button>
+    
+    <hr>
+</div>
+<br>
+<p>
+    ¿El formulario es valido?: {{ formulario.valid }}
+</p>
+<p>
+    {{formulario.value | json}}
+</p>
+
+<p>
+    {{
+        formulario.controls['correo'].errors | json
+    }}
+</p>
