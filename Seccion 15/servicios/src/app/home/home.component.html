@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="articulo" *ngFor="let articulo of articulos">
+        <h2 (click)="irDetalle(articulo)">{{ articulo.title }}</h2>
+        <p>Descripcion: {{articulo.body}}</p>
+        <p>ID: {{articulo.id}}</p>
+        <h3>UserID: {{articulo.userId}}</h3>
+        <button (click)="actualizar(articulo)" class="btn btn-primary">Actualizar</button>
+        <button (click)="borrar(articulo.id)" class="btn btn-danger">Eliminar</button>
+    </div>
+</div>
