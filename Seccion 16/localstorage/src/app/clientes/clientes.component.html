@@ -1,0 +1,31 @@
+<h1>Local Storage</h1>
+
+<div class="form-group p-3 m-4">
+    <button (click)="guardarClientes()" class="btn btn-success">Guardar clientes</button>
+    <button (click)="guardarProductos()" class="btn btn-success">Guardar productos</button>
+</div>
+
+<!-- <div class="form-group p-3 m-4">
+    <button (click)="leer()" class="btn btn-primary">Leer Datos</button>
+</div> -->
+
+<div class="form-group p-3 m-4">
+    
+    <button (click)="eliminarClientes()" class="btn btn-danger">Eliminar Clientes</button>
+    <button (click)="eliminarProductos()" class="btn btn-danger">Eliminar Productos</button>
+    <button (click)="eliminarTodo()" class="btn btn-danger">Eliminar Todo</button>
+</div>
+
+
+<div class="container clientes">
+    <div *ngFor="let cliente of clientesLocales">
+        <p>Cliente: {{cliente.nombre}}</p>
+        <p>Edad: {{cliente.edad}}</p>
+    </div>
+</div>
+<div class="container productos">
+    <div *ngFor="let producto of productosLocales">
+        <p>Producto: {{producto.nombre}}</p>
+        <p>Precio: {{producto.precio | currency }}</p>
+    </div>
+</div>

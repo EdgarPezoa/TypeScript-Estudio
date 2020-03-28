@@ -1,0 +1,20 @@
+<div class="container">
+    <form action="" class="form-group mt-2">
+        <input (input)="buscarClientes($event)" placeholder="Buscar Cliente..." type="text" class="form-control">
+        <button class="btn btn-primary btn-block" routerLink="agregar-clientes">Agregar Cliente Nuevo</button>
+    </form>
+
+    <div class="row">
+        <div *ngFor="let cliente of clientes" class="col-md-4 mt-2">
+            <div class="card w-100">
+                <div class="card-body">
+                  <h5 class="card-title">{{cliente.nombre}} {{cliente.apellido}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{cliente.id}}</h6>
+                  <p class="card-text">{{cliente.direccion}}</p>
+                  <a (click)="irProductos(cliente)" class="card-link">Agregar</a>
+                  <a href="#" class="card-link">Información</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

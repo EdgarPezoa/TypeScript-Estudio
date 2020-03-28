@@ -1,0 +1,20 @@
+<div class="container">
+    <form action="" class="form-group mt-2">
+        <input (input)="buscarProductos($event)" placeholder="Buscar Productos..." type="text" class="form-control">
+        <button class="btn btn-primary btn-block" routerLink="/agregar-productos">Agregar Producto Nuevo</button>
+    </form>
+
+    <div class="row">
+        <div *ngFor="let producto of productos" class="col-md-4 mt-2">
+            <div class="card w-100">
+                <div class="card-body">
+                  <h5 class="card-title">{{producto.nombre}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{producto.precio | currency}}</h6>
+                  <p class="card-text">{{producto.descripcion}}</p>
+                  <a (click)="agregar(producto)" class="card-link">Agregar</a>
+                  <a href="#" class="card-link">Eliminar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
